@@ -1,22 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BoardMembers = () => {
+  const { t } = useLanguage();
+  
   const placeholderMembers = [
-    { name: "Board Member Name", role: "Position Title" },
-    { name: "Board Member Name", role: "Position Title" },
-    { name: "Board Member Name", role: "Position Title" },
-    { name: "Board Member Name", role: "Position Title" },
-    { name: "Board Member Name", role: "Position Title" },
-    { name: "Board Member Name", role: "Position Title" },
+    { name: t('board.member1.name'), role: t('board.member1.role') },
+    { name: t('board.member2.name'), role: t('board.member2.role') },
+    { name: t('board.member3.name'), role: t('board.member3.role') },
+    { name: t('board.member4.name'), role: t('board.member4.role') },
   ];
 
   return (
     <section className="py-20 bg-gradient-to-b from-muted to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Our Board</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">{t('board.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Dedicated leaders committed to serving our community
+            {t('board.subtitle')}
           </p>
         </div>
 

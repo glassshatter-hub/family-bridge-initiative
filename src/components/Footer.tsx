@@ -1,6 +1,9 @@
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
@@ -13,17 +16,17 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-background/80">
-              <li><a href="#mission" className="hover:text-background transition-colors">Mission</a></li>
-              <li><a href="#services" className="hover:text-background transition-colors">Services</a></li>
-              <li><a href="#board" className="hover:text-background transition-colors">Board</a></li>
-              <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
+              <li><Link to="/mission" className="hover:text-background transition-colors">{t('nav.mission')}</Link></li>
+              <li><Link to="/services" className="hover:text-background transition-colors">{t('nav.services')}</Link></li>
+              <li><Link to="/board" className="hover:text-background transition-colors">{t('nav.board')}</Link></li>
+              <li><Link to="/contact" className="hover:text-background transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
+            <h4 className="font-semibold mb-4">{t('footer.contactUs')}</h4>
             <div className="flex items-center gap-2 text-background/80">
               <Mail className="w-5 h-5" />
               <a href="mailto:contact@koreanfamiliesadvocates.org" className="hover:text-background transition-colors">
@@ -34,7 +37,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-background/20 pt-8 text-center text-background/60 text-sm">
-          <p>&copy; {new Date().getFullYear()} Korean Families Advocates. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Korean Families Advocates. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
