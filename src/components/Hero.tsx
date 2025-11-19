@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-families.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-[600px] flex items-center">
       <div 
@@ -17,10 +20,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Supporting Korean Families
+            {t('hero.title')}
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-100">
-            Bridging cultures and fostering understanding between families and child-serving systems
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
@@ -29,7 +32,7 @@ const Hero = () => {
               className="bg-primary hover:bg-primary/90 text-white transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <a href="mailto:contact@koreanfamiliesadvocates.org">
-                Get Help Now
+                {t('hero.getHelp')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -39,7 +42,7 @@ const Hero = () => {
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-foreground transition-all duration-300"
             >
-              <Link to="/services">Learn More</Link>
+              <Link to="/services">{t('hero.learnMore')}</Link>
             </Button>
           </div>
         </div>

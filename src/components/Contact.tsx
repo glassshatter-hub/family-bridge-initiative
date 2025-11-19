@@ -3,15 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">{t('contact.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We're here to help. Reach out to us for support or information about our services.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -23,7 +25,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Email Us</h3>
+                  <h3 className="font-semibold mb-1">{t('contact.email.title')}</h3>
                   <a href="mailto:contact@koreanfamiliesadvocates.org" className="text-primary hover:underline">
                     contact@koreanfamiliesadvocates.org
                   </a>
@@ -37,38 +39,38 @@ const Contact = () => {
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Full Name
+                    {t('contact.form.name')}
                   </label>
-                  <Input id="name" placeholder="Your name" className="w-full" />
+                  <Input id="name" placeholder={t('contact.form.name')} className="w-full" />
                 </div>
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email Address
+                    {t('contact.form.email')}
                   </label>
-                  <Input id="email" type="email" placeholder="your.email@example.com" className="w-full" />
+                  <Input id="email" type="email" placeholder={t('contact.form.email')} className="w-full" />
                 </div>
                 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                    Phone Number
+                    {t('contact.form.phone')}
                   </label>
-                  <Input id="phone" type="tel" placeholder="(123) 456-7890" className="w-full" />
+                  <Input id="phone" type="tel" placeholder={t('contact.form.phone')} className="w-full" />
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
+                    {t('contact.form.message')}
                   </label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell us how we can help you..." 
+                    placeholder={t('contact.form.message')} 
                     className="w-full min-h-[150px]"
                   />
                 </div>
                 
                 <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-                  Send Message
+                  {t('contact.form.send')}
                 </Button>
               </form>
             </CardContent>

@@ -1,42 +1,45 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Languages, Users, GraduationCap, FileText, Link2 } from "lucide-react";
-
-const services = [
-  {
-    icon: Languages,
-    title: "Translation Services",
-    description: "Translate and explain school and government documents in Korean and English.",
-  },
-  {
-    icon: Users,
-    title: "Advocacy & Support",
-    description: "Accompany families to meetings with schools, child protective services, and courts as cultural and language advocates.",
-  },
-  {
-    icon: FileText,
-    title: "Cultural Consultation",
-    description: "Provide cultural consultation to social workers, teachers, and other professionals.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Workshops & Education",
-    description: "Offer workshops and know-your-rights materials for families and community members.",
-  },
-  {
-    icon: Link2,
-    title: "Resource Connection",
-    description: "Connect families with trusted legal, mental-health, and social-service resources.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
+  const services = [
+    {
+      icon: Languages,
+      title: t('services.language.title'),
+      description: t('services.language.desc'),
+    },
+    {
+      icon: Users,
+      title: t('services.family.title'),
+      description: t('services.family.desc'),
+    },
+    {
+      icon: FileText,
+      title: t('services.legal.title'),
+      description: t('services.legal.desc'),
+    },
+    {
+      icon: GraduationCap,
+      title: t('services.education.title'),
+      description: t('services.education.desc'),
+    },
+    {
+      icon: Link2,
+      title: t('services.community.title'),
+      description: t('services.community.desc'),
+    },
+  ];
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-foreground">What We Do</h2>
+          <h2 className="text-4xl font-bold mb-4 text-foreground">{t('services.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive support services designed to help Korean families navigate complex systems
+            {t('services.subtitle')}
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
