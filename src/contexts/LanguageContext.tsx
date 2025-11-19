@@ -81,27 +81,27 @@ export const translations = {
     
     // Hero
     'hero.title': '우리 지역사회의 한인 가정을 지원합니다',
-    'hero.subtitle': '한인 가정이 미국에서 번영할 수 있도록 옹호, 자원 및 지원을 제공합니다',
+    'hero.subtitle': '코리안 패밀리즈 애드보케이츠(Korean Families Advocates)는 미국에서 자녀를 키우는 한국·한인 가정들이 학교, 병원, 복지·법원 등 아동 관련 시스템을 안전하게 이해하고 차별 없이 서비스를 받을 수 있도록 돕는 비영리 단체입니다.',
     'hero.getHelp': '지금 도움 받기',
     'hero.learnMore': '더 알아보기',
     
     // Mission
     'mission.title': '우리의 미션',
-    'mission.text': '한인가정옹호단은 포괄적인 지원 서비스, 옹호 및 커뮤니티 구축을 통해 한인 이민 가정에 힘을 실어주는 데 전념하고 있습니다. 우리는 문화적 격차를 해소하고 가족들이 도전을 헤쳐나가고 새로운 집에서 성공적인 삶을 구축할 수 있도록 자원을 제공합니다.',
+    'mission.text': '언어·문화 장벽으로 어려움을 겪는 한국 가정을 지원합니다.\n\n학교, 병원, 아동복지 등 아이와 관련된 결정 과정에서 부모의 목소리가 존중되도록 함께 옆에 서 있습니다.\n\n신뢰할 수 있는 정보와 통역·번역, 동행 지원을 통해 가정이 두려움 없이 질문하고 선택할 수 있는 환경을 만듭니다.',
     
     // Services
     'services.title': '우리가 하는 일',
     'services.subtitle': '한인 가정의 요구에 맞춘 포괄적인 지원 서비스',
-    'services.language.title': '언어 서비스',
-    'services.language.desc': '의료, 법률 및 교육 환경을 위한 전문 통역 및 번역 서비스',
-    'services.family.title': '가족 지원',
-    'services.family.desc': '가족 관계를 강화하고 갈등을 해결하기 위한 상담, 중재 및 자원',
-    'services.education.title': '교육 지원',
-    'services.education.desc': '학교 시스템 탐색, 튜터링 프로그램 및 대학 준비 지원',
-    'services.legal.title': '법률 안내',
-    'services.legal.desc': '이민 지원, 문서 준비 및 신뢰할 수 있는 법률 전문가 추천',
-    'services.community.title': '커뮤니티 연결',
-    'services.community.desc': '커뮤니티 유대를 구축하기 위한 문화 행사, 지원 그룹 및 네트워킹 기회',
+    'services.language.title': '통역·번역 지원',
+    'services.language.desc': '학교 회의(IEP, 상담, 징계·전학 관련 미팅 등), 병원 진료 설명, 검사 결과 안내, 아동복지국(ACS), 법원, 변호사와의 소통',
+    'services.family.title': '동행·옹호(Advocacy) 서비스',
+    'services.family.desc': '회의·면담에 함께 참석하여 부모의 입장을 정리해 드리고, 필요한 질문을 같이 준비합니다. 불이익이나 오해가 생기지 않도록 기록과 절차를 함께 확인합니다.',
+    'services.education.title': '정보·교육 제공',
+    'services.education.desc': '한국어로 된 가이드, 체크리스트, FAQ 제공. 부모 교육 워크숍, 소규모 설명회 개최',
+    'services.legal.title': '우리의 약속',
+    'services.legal.desc': '비밀 보장: 상담 내용과 서류는 외부에 공유되지 않습니다. 비판 없는 경청: 잘잘못을 따지기보다, 먼저 부모님의 이야기를 끝까지 듣겠습니다.',
+    'services.community.title': '문화적 존중',
+    'services.community.desc': '한국 문화와 가족의 방식이 존중받을 수 있는 현실적인 해결책을 함께 찾습니다.',
     
     // Board
     'board.title': '이사회 구성원',
@@ -116,15 +116,15 @@ export const translations = {
     'board.member4.role': '재무',
     
     // Contact
-    'contact.title': '연락하기',
-    'contact.subtitle': '저희가 도와드리겠습니다. 지원과 안내를 위해 연락주세요.',
+    'contact.title': '상담·문의',
+    'contact.subtitle': '문의 언어: 한국어 / 영어 모두 가능',
     'contact.form.name': '이름',
     'contact.form.email': '이메일',
     'contact.form.phone': '전화번호',
     'contact.form.message': '메시지',
     'contact.form.send': '메시지 보내기',
     'contact.email.title': '이메일 보내기',
-    'contact.email.text': '언제든지 이메일을 보내주세요',
+    'contact.email.text': 'info@koreanfamiliesadvocates.org',
     
     // Footer
     'footer.quickLinks': '빠른 링크',
