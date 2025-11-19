@@ -1,17 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
-  };
 
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-sm">
@@ -22,32 +15,35 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('mission')}
+            <Link 
+              to="/mission"
               className="text-foreground hover:text-primary transition-colors"
             >
               Mission
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
+            </Link>
+            <Link 
+              to="/services"
               className="text-foreground hover:text-primary transition-colors"
             >
               Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('board')}
+            </Link>
+            <Link 
+              to="/board"
               className="text-foreground hover:text-primary transition-colors"
             >
               Board
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
+            </Link>
+            <Link 
+              to="/contact"
               className="text-foreground hover:text-primary transition-colors"
             >
               Contact
-            </button>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
-              Get Help
+            </Link>
+            <Button 
+              asChild
+              className="bg-primary hover:bg-primary/90 text-white"
+            >
+              <a href="mailto:contact@koreanfamiliesadvocates.org">Get Help</a>
             </Button>
           </div>
 
@@ -61,32 +57,39 @@ const Navigation = () => {
 
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-3">
-            <button 
-              onClick={() => scrollToSection('mission')}
+            <Link 
+              to="/mission"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors"
             >
               Mission
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
+            </Link>
+            <Link 
+              to="/services"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors"
             >
               Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('board')}
+            </Link>
+            <Link 
+              to="/board"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors"
             >
               Board
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
+            </Link>
+            <Link 
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
               className="block w-full text-left px-4 py-2 hover:bg-muted rounded-lg transition-colors"
             >
               Contact
-            </button>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white mt-2">
-              Get Help
+            </Link>
+            <Button 
+              asChild
+              className="w-full bg-primary hover:bg-primary/90 text-white mt-2"
+            >
+              <a href="mailto:contact@koreanfamiliesadvocates.org">Get Help</a>
             </Button>
           </div>
         )}
