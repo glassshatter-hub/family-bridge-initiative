@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
-import charityImage from "@/assets/charity-work.jpg";
+import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -18,51 +17,19 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div>
-            <img 
-              src={charityImage} 
-              alt="Community support and charity work" 
-              className="rounded-2xl shadow-xl w-full mb-8"
-            />
-            
-            <div className="space-y-6">
-              <Card className="border-border bg-card">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Email Us</h3>
-                    <a href="mailto:contact@koreanfamiliesadvocates.org" className="text-primary hover:underline">
-                      contact@koreanfamiliesadvocates.org
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border bg-card">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Call Us</h3>
-                    <p className="text-muted-foreground">Available during business hours</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border bg-card">
-                <CardContent className="flex items-start gap-4 p-6">
-                  <div className="w-12 h-12 rounded-full bg-accent/50 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Visit Us</h3>
-                    <p className="text-muted-foreground">Serving families throughout the community</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="border-border bg-card">
+              <CardContent className="flex items-start gap-4 p-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Email Us</h3>
+                  <a href="mailto:contact@koreanfamiliesadvocates.org" className="text-primary hover:underline">
+                    contact@koreanfamiliesadvocates.org
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <Card className="border-border bg-card">

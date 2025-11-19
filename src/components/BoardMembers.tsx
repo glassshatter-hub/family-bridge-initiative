@@ -1,4 +1,3 @@
-import boardImage from "@/assets/board-placeholder.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const BoardMembers = () => {
@@ -19,14 +18,6 @@ const BoardMembers = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Dedicated leaders committed to serving our community
           </p>
-        </div>
-        
-        <div className="mb-12">
-          <img 
-            src={boardImage} 
-            alt="Board members meeting" 
-            className="rounded-2xl shadow-2xl w-full max-w-4xl mx-auto"
-          />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
