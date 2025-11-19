@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-families.jpg";
 
 const Hero = () => {
@@ -22,16 +23,23 @@ const Hero = () => {
             Bridging cultures and fostering understanding between families and child-serving systems
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white transition-all duration-300 hover:scale-105 shadow-lg">
-              Get Help Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-white transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              <a href="mailto:contact@koreanfamiliesadvocates.org">
+                Get Help Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
             <Button 
+              asChild
               size="lg" 
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-foreground transition-all duration-300"
             >
-              Learn More
+              <Link to="/services">Learn More</Link>
             </Button>
           </div>
         </div>
