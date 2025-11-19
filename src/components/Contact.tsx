@@ -4,9 +4,50 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useForm } from "react-hook-form";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
+import { useState } from "react";
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+}
 
 const Contact = () => {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: data
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      
+      reset();
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -36,26 +77,55 @@ const Contact = () => {
 
           <Card className="border-border bg-card">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     {t('contact.form.name')}
                   </label>
-                  <Input id="name" placeholder={t('contact.form.name')} className="w-full" />
+                  <Input 
+                    id="name" 
+                    placeholder={t('contact.form.name')} 
+                    className="w-full"
+                    {...register("name", { required: "Name is required" })}
+                  />
+                  {errors.name && (
+                    <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
+                  )}
                 </div>
                 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     {t('contact.form.email')}
                   </label>
-                  <Input id="email" type="email" placeholder={t('contact.form.email')} className="w-full" />
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder={t('contact.form.email')} 
+                    className="w-full"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address"
+                      }
+                    })}
+                  />
+                  {errors.email && (
+                    <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+                  )}
                 </div>
                 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium mb-2">
                     {t('contact.form.phone')}
                   </label>
-                  <Input id="phone" type="tel" placeholder={t('contact.form.phone')} className="w-full" />
+                  <Input 
+                    id="phone" 
+                    type="tel" 
+                    placeholder={t('contact.form.phone')} 
+                    className="w-full"
+                    {...register("phone")}
+                  />
                 </div>
                 
                 <div>
@@ -66,11 +136,19 @@ const Contact = () => {
                     id="message" 
                     placeholder={t('contact.form.message')} 
                     className="w-full min-h-[150px]"
+                    {...register("message", { required: "Message is required" })}
                   />
+                  {errors.message && (
+                    <p className="text-sm text-destructive mt-1">{errors.message.message}</p>
+                  )}
                 </div>
                 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-                  {t('contact.form.send')}
+                <Button 
+                  type="submit" 
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : t('contact.form.send')}
                 </Button>
               </form>
             </CardContent>
