@@ -13,7 +13,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center py-2">
-            <img src="/Logo.png" alt="Korean Families Advocates" className="h-24 w-auto" />
+            <img src="/Logo.png?v=2" alt="Korean Families Advocates" className="h-24 w-auto" />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
