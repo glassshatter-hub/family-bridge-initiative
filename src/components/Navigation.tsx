@@ -9,11 +9,11 @@ const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-sm">
+    <nav className="bg-white border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center">
-            <img src="/logo-clean.png" alt="Korean Families Advocates" className="h-16 w-auto mix-blend-multiply" />
+          <Link to="/" className="flex items-center py-2">
+            <img src="/logo-final.png" alt="Korean Families Advocates" className="h-20 w-auto" />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
