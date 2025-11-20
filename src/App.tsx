@@ -9,6 +9,7 @@ import MissionPage from "./pages/Mission";
 import ServicesPage from "./pages/Services";
 import BoardPage from "./pages/Board";
 import ContactPage from "./pages/ContactPage";
+import LogoProcessor from "./pages/LogoProcessor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/board" element={<BoardPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/logo-processor" element={<LogoProcessor />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
