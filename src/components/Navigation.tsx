@@ -12,9 +12,8 @@ const Navigation = () => {
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/Logo.png" alt="Korean Families Advocates Logo" className="h-10 w-10" />
-            <h1 className="text-xl font-bold text-primary">Korean Families Advocates</h1>
+          <Link to="/" className="flex items-center">
+            <img src="/Logo.png" alt="Korean Families Advocates" className="h-12 w-auto" />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
