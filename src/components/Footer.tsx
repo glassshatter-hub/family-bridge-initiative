@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Korean Families Advocates</h3>
             <p className="text-background/80">
-              Supporting Korean immigrant families and promoting equitable treatment through cultural understanding.
+              문화적 이해를 바탕으로 한국 이민 가정을 지원하고 공정한 대우를 지향합니다.
             </p>
           </div>
           
