@@ -67,6 +67,7 @@ export const translations = {
     'contact.email.text': 'Send us an email anytime',
     
     // Footer
+    'footer.description': 'Supporting Korean immigrant families with cultural understanding and advocating for fair treatment.',
     'footer.quickLinks': 'Quick Links',
     'footer.contactUs': 'Contact Us',
     'footer.rights': 'All rights reserved.',
@@ -127,6 +128,7 @@ export const translations = {
     'contact.email.text': 'info@koreanfamiliesadvocates.org',
     
     // Footer
+    'footer.description': '문화적 이해를 바탕으로 한국 이민 가정을 지원하고 공정한 대우를 지향합니다.',
     'footer.quickLinks': '빠른 링크',
     'footer.contactUs': '연락처',
     'footer.rights': '모든 권리 보유.',
